@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <link href="resource/jeasyui/1.5.2/themes/default/easyui.css" rel='stylesheet' type='text/css'/>
+    <link href="resource/jeasyui/1.5.2/themes/icon.css" rel='stylesheet' type='text/css'/>
+    <link href="resource/jeasyui/1.5.2/themes/color.css" rel='stylesheet' type='text/css'/>
+    <link href="resource/jeasyui/1.5.2/themes/extend.css" rel='stylesheet' type='text/css'/>
+     <script src="resource/js/prototype.extend.js" charset="utf-8" type="text/javascript"></script>
+    <script src="resource/js/jquery.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="resource/js/DateUtils.js" charset="utf-8" type="text/javascript"></script>
+    <script src="resource/js/jquery.cookie.js" charset="utf-8" type="text/javascript"></script>
+	<script src="resource/js/jquery.extend.js" charset="utf-8" type="text/javascript"></script>
+    
+    <script src="resource/jeasyui/1.5.2/jquery.easyui.min.js" charset="utf-8" type="text/javascript"></script>
+
+  </head>
+  
+  <body>
+   <table id="dg" title="My Users" style="width:550px;height:250px"
+		toolbar="#toolbar" idField="id"
+		rownumbers="true" fitColumns="true" singleSelect="true">
+	<thead>
+		<tr>
+			<th field="firstname" width="50" editor="{type:'validatebox',options:{required:true}}">First Name</th>
+			<th field="lastname" width="50" editor="{type:'validatebox',options:{required:true}}">Last Name</th>
+			<th field="phone" width="50" editor="text">Phone</th>
+			<th field="email" width="50" editor="{type:'validatebox',options:{validType:'email'}}">Email</th>
+		</tr>
+	</thead>
+</table>
+<div id="toolbar">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">New</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">Destroy</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">Save</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">Cancel</a>
+</div>
+  </body>
+  <script type="text/javascript">
+  	$('#dg').edatagrid({
+	url: 'get_users.php',
+	saveUrl: 'save_user.php',
+	updateUrl: 'update_user.php',
+	destroyUrl: 'destroy_user.php'
+});
+  </script>
+</html>

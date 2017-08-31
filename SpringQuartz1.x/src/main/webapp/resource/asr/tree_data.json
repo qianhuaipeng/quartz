@@ -1,0 +1,33 @@
+[{
+	"id":1,
+	"text":"流程管理",
+	"children":[{
+		"id":11,
+		"text":"VUI菜单消岐管理",
+		"attributes":{
+			"url":"menuDisambig.do"
+		}
+	},{
+		"id":12,
+		"text":"原子节点配置",
+		"attributes":{
+			"url":"nodes.do"
+		}
+	},{
+		"id":13,
+		"text":"VUI标签管理",
+		"attributes":{
+			"url":"tagConfiger.do"
+		}
+	}]
+},{
+	"id":2,
+	"text":"报表管理",
+	"children":[{
+		"id":21,
+		"text":"客户号统计报表",
+		"attributes":{
+			"url":"calllog.do"
+		}
+	}]
+}]
